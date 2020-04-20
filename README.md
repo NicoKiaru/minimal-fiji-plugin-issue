@@ -12,7 +12,7 @@ mvn
 
 ### Installation
 
-If you don't want to build it yourself, there is a jar [here]().
+If you don't want to build it yourself, there is a pre-build jar available [here](https://github.com/k-dominik/minimal-fiji-plugin-issue/releases).
 
 copy the produced jar from the `target` folder to your `Fiji/plugins` folder.
 
