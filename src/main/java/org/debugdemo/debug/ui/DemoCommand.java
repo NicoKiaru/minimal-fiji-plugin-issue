@@ -1,3 +1,5 @@
+package org.debugdemo.debug.ui;
+
 import net.imagej.Dataset;
 import org.scijava.app.StatusService;
 import org.scijava.command.Command;
@@ -6,7 +8,7 @@ import org.scijava.options.OptionsService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.ui.UIService;
-
+import net.imagej.ImageJ;
 
 @Plugin(type = Command.class, headless = true, menuPath = "Plugins>debug-demo>run-demo")
 public class DemoCommand implements Command {
@@ -23,7 +25,6 @@ public class DemoCommand implements Command {
     @Parameter
     public UIService uiService;
 
-
     @Parameter(label = "Image 1")
     public Dataset inputImage1;
 
@@ -33,5 +34,10 @@ public class DemoCommand implements Command {
     @Override
     public void run() {
         logService.info("Ran - nothing should happen");
+    }
+
+    public static void main(String... args) {
+        final ImageJ ij = new ImageJ();
+        ij.ui().showUI();
     }
 }
